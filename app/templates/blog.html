@@ -7,24 +7,36 @@
 </head>
 <body>
 <div class="container my-4">
-    <h2 class="text-center mb-4">Простой блог о простых вещах</h2>
+    <h2 class="text-center mb-4">Зарегистрированные посещения страницы</h2>
     <form method="POST" action="/" class="mb-4">
         <div class="mb-3">
-            <label for="title" class="form-label">Заголовок</label>
-            <input id="title" type="text" name="title" class="form-control" required>
+            <label for="fname" class="form-label">Имя</label>
+            <input id="fname" type="text" name="fname" class="form-control" required>
         </div>
         <div class="mb-3">
-            <label for="content" class="form-label">Текст поста</label>
-            <textarea id="content" rows="3" name="content" class="form-control" required></textarea>
+            <label for="age" class="form-label">Возраст</label>
+            <input id="age" type="text" name="age" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="city" class="form-label">Город</label>
+            <input id="city" type="text" name="city" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="hobby" class="form-label">Хобби</label>
+            <input id="hobby" type="text" name="hobby" class="form-control" required>
         </div>
         <button type="submit" class="btn btn-primary">Опубликовать</button>
     </form>
     <hr>
-    <h2 class="mb-4">Предыдущие посты</h2>
-    {% for post in posts %}
+    <h2 class="mb-4">Предыдущие пользователи</h2>
+    {% for user in users %}
         <div class="mb-4">
-            <h4>{{ post.title }}</h4>
-            <p>{{ post.content }}</p>
+            <hr>
+            <h4>{{ user.name }}</h4>
+            <p>{{ user.age }}</p>
+            <p>{{ user.city }}</p>
+            <p>{{ user.hobby }}</p>
+            <hr>
         </div>
     {% endfor %}
 </div>
